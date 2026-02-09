@@ -1,91 +1,91 @@
 # Little Lemon API - Capstone Project 🍋
 
-## O Projeto Escolhido 🎯
+## The Chosen Project 🎯
 
-Este projeto é uma API robusta desenvolvida como parte do **Capstone Project** do curso **Meta Back-End Developer Professional Certificate**. O objetivo foi criar um sistema de backend completo para o restaurante fictício "Little Lemon", permitindo que clientes consultem o cardápio e reservem mesas, enquanto gerentes e administradores possuem controle total sobre o inventário e as operações.
+This project is a robust API developed as part of the **Capstone Project** for the **Meta Back-End Developer Professional Certificate**. The goal was to create a complete backend system for the fictional restaurant "Little Lemon," allowing customers to browse the menu and book tables, while managers and admins have full control over inventory and operations.
 
-A aplicação foi construída utilizando **Django** e **Django REST Framework (DRF)**, focando em boas práticas de design de API, segurança, autenticação e performance.
+The application was built using **Django** and **Django REST Framework (DRF)**, focusing on API design best practices, security, authentication, and performance.
 
-## Funcionalidades Implementadas ⚙️
+## Implemented Features ⚙️
 
-O sistema desenvolvido conta com as seguintes funcionalidades principais:
+The developed system includes the following main features:
 
-* **Gestão de Cardápio (Menu API)**: Endpoints completos (CRUD) para listar, criar, atualizar e deletar itens do cardápio.
-* **Sistema de Reservas**: Permite que usuários autenticados reservem mesas para datas e horários específicos.
-* **Autenticação Robusta**: Implementação de autenticação baseada em Tokens e Session utilizando a biblioteca **Djoser**.
-* **Controle de Acesso (Permissões)**:
-    * **Clientes**: Podem visualizar o menu e fazer reservas.
-    * **Gerentes**: Podem gerenciar itens do menu e entregadores.
-    * **Administradores**: Acesso total ao sistema.
-* **Filtragem, Ordenação e Paginação**: Recursos avançados para facilitar a busca de itens no cardápio por preço, categoria, etc.
-* **Throttling (Limitação de Taxa)**: Proteção da API contra excesso de requisições, garantindo estabilidade.
-* **Testes Automatizados**: Testes unitários para garantir a integridade dos endpoints e regras de negócio.
+* **Menu Management (Menu API)**: Complete CRUD endpoints to list, create, update, and delete menu items.
+* **Booking System**: Allows authenticated users to book tables for specific dates and times.
+* **Robust Authentication**: Implementation of Token-based and Session authentication using the **Djoser** library.
+* **Access Control (Permissions)**:
+    * **Customers**: Can view the menu and make bookings.
+    * **Managers**: Can manage menu items and delivery crew.
+    * **Admins**: Full access to the system.
+* **Filtering, Ordering, and Pagination**: Advanced features to facilitate searching for menu items by price, category, etc.
+* **Throttling (Rate Limiting)**: API protection against request overload, ensuring stability.
+* **Automated Testing**: Unit tests to guarantee the integrity of endpoints and business rules.
 
-## Tecnologias Utilizadas 🛠️
+## Technologies Used 🛠️
 
-* **Python**: Linguagem principal do projeto.
-* **Django**: Framework web de alto nível para desenvolvimento rápido.
-* **Django REST Framework (DRF)**: Ferramenta poderosa para construção de Web APIs.
-* **Djoser**: Biblioteca para autenticação e gerenciamento de usuários.
-* **Pipenv**: Gerenciamento de dependências e ambiente virtual.
-* **SQLite/MySQL**: Banco de dados para persistência das informações.
-* **Insomnia / Postman**: Ferramentas utilizadas para testar as requisições da API.
+* **Python**: Main language of the project.
+* **Django**: High-level web framework for rapid development.
+* **Django REST Framework (DRF)**: Powerful toolkit for building Web APIs.
+* **Djoser**: Library for authentication and user management.
+* **Pipenv**: Dependency management and virtual environment.
+* **SQLite/MySQL**: Database for information persistence.
+* **Insomnia / Postman**: Tools used to test API requests.
 
-## Estrutura do Projeto 📁
+## Project Structure 📁
 
 ```bash
 Little-Lemon/
-├── littlelemon/            # Configurações principais do projeto (Settings, URLs base)
-├── restaurant/             # App principal contendo a lógica de negócio
-│   ├── migrations/         # Arquivos de migração do banco de dados
-│   ├── models.py           # Modelos de dados (Menu, Booking, etc.)
-│   ├── serializers.py      # Serializadores para conversão de dados
-│   ├── urls.py             # Rotas específicas da API
-│   └── views.py            # Controladores (ViewSets e Generics)
-├── media/                  # Arquivos de mídia (imagens dos pratos)
-├── manage.py               # Utilitário de linha de comando do Django
-├── Pipfile                 # Arquivo de definição de dependências
-├── Pipfile.lock            # Arquivo de bloqueio de versões
-├── db.sqlite3              # Banco de dados local (padrão)
-└── README.md               # Este arquivo
+├── littlelemon/            # Main project settings (Settings, Base URLs)
+├── restaurant/             # Main app containing business logic
+│   ├── migrations/         # Database migration files
+│   ├── models.py           # Data models (Menu, Booking, etc.)
+│   ├── serializers.py      # Serializers for data conversion
+│   ├── urls.py             # API-specific routes
+│   └── views.py            # Controllers (ViewSets and Generics)
+├── media/                  # Media files (dish images)
+├── manage.py               # Django command-line utility
+├── Pipfile                 # Dependency definition file
+├── Pipfile.lock            # Version lock file
+├── db.sqlite3              # Local database (default)
+└── README.md               # This file
 
 ```
 
-## Endpoints Principais da API 🔗
+## Main API Endpoints 🔗
 
-Aqui estão algumas das rotas disponíveis para teste:
+Here are some of the routes available for testing:
 
-| Método | Endpoint | Descrição | Permissão |
+| Method | Endpoint | Description | Permission |
 | --- | --- | --- | --- |
-| `GET` | `/api/menu-items/` | Lista todos os pratos | Qualquer um |
-| `POST` | `/api/menu-items/` | Adiciona um novo prato | Gerente/Admin |
-| `GET` | `/api/bookings/` | Lista as reservas | Usuário Autenticado |
-| `POST` | `/api/token/login/` | Gera token de acesso | Qualquer um |
-| `POST` | `/api/users/` | Cria um novo usuário | Qualquer um |
+| `GET` | `/api/menu-items/` | Lists all dishes | Anyone |
+| `POST` | `/api/menu-items/` | Adds a new dish | Manager/Admin |
+| `GET` | `/api/bookings/` | Lists bookings | Authenticated User |
+| `POST` | `/api/token/login/` | Generates access token | Anyone |
+| `POST` | `/api/users/` | Creates a new user | Anyone |
 
-## Como Rodar o Projeto 🚀
+## How to Run the Project 🚀
 
-Para rodar a API localmente, siga os passos abaixo:
+To run the API locally, follow the steps below:
 
-### 1. Clonar o Repositório 🧑‍💻
+### 1. Clone the Repository 🧑‍💻
 
-Clone o repositório utilizando o comando Git:
+Clone the repository using the Git command:
 
 ```bash
 git clone [https://github.com/MatheusFigueiredo7/Little-Lemon.git](https://github.com/MatheusFigueiredo7/Little-Lemon.git)
 
 ```
 
-### 2. Navegar até o Diretório 📂
+### 2. Navigate to the Directory 📂
 
 ```bash
 cd Little-Lemon
 
 ```
 
-### 3. Instalar Dependências 📦
+### 3. Install Dependencies 📦
 
-Certifique-se de ter o `pipenv` instalado e execute:
+Ensure you have `pipenv` installed and run:
 
 ```bash
 pipenv install
@@ -93,38 +93,38 @@ pipenv shell
 
 ```
 
-### 4. Configurar o Banco de Dados 🗄️
+### 4. Configure the Database 🗄️
 
-Aplique as migrações para criar as tabelas necessárias:
+Apply migrations to create the necessary tables:
 
 ```bash
 python manage.py migrate
 
 ```
 
-### 5. Executar o Servidor 🌐
+### 5. Run the Server 🌐
 
-Inicie o servidor de desenvolvimento:
+Start the development server:
 
 ```bash
 python manage.py runserver
 
 ```
 
-A API estará disponível em `http://127.0.0.1:8000/`.
+The API will be available at `http://127.0.0.1:8000/`.
 
-## Testando a API 🧪
+## Testing the API 🧪
 
-Para testar os endpoints:
+To test the endpoints:
 
-1. Acesse `http://127.0.0.1:8000/api/menu-items/` no navegador ou via Insomnia/Postman.
-2. Para funcionalidades administrativas, crie um superusuário:
+1. Access `http://127.0.0.1:8000/api/menu-items/` in your browser or via Insomnia/Postman.
+2. For administrative features, create a superuser:
 ```bash
 python manage.py createsuperuser
 
 ```
 
 
-3. Faça login no painel administrativo em `http://127.0.0.1:8000/admin/`.
+3. Login to the admin panel at `http://127.0.0.1:8000/admin/`.
 
 ---
