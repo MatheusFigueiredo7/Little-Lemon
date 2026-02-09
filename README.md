@@ -48,3 +48,83 @@ Little-Lemon/
 ├── Pipfile.lock            # Arquivo de bloqueio de versões
 ├── db.sqlite3              # Banco de dados local (padrão)
 └── README.md               # Este arquivo
+
+```
+
+## Endpoints Principais da API 🔗
+
+Aqui estão algumas das rotas disponíveis para teste:
+
+| Método | Endpoint | Descrição | Permissão |
+| --- | --- | --- | --- |
+| `GET` | `/api/menu-items/` | Lista todos os pratos | Qualquer um |
+| `POST` | `/api/menu-items/` | Adiciona um novo prato | Gerente/Admin |
+| `GET` | `/api/bookings/` | Lista as reservas | Usuário Autenticado |
+| `POST` | `/api/token/login/` | Gera token de acesso | Qualquer um |
+| `POST` | `/api/users/` | Cria um novo usuário | Qualquer um |
+
+## Como Rodar o Projeto 🚀
+
+Para rodar a API localmente, siga os passos abaixo:
+
+### 1. Clonar o Repositório 🧑‍💻
+
+Clone o repositório utilizando o comando Git:
+
+```bash
+git clone [https://github.com/MatheusFigueiredo7/Little-Lemon.git](https://github.com/MatheusFigueiredo7/Little-Lemon.git)
+
+```
+
+### 2. Navegar até o Diretório 📂
+
+```bash
+cd Little-Lemon
+
+```
+
+### 3. Instalar Dependências 📦
+
+Certifique-se de ter o `pipenv` instalado e execute:
+
+```bash
+pipenv install
+pipenv shell
+
+```
+
+### 4. Configurar o Banco de Dados 🗄️
+
+Aplique as migrações para criar as tabelas necessárias:
+
+```bash
+python manage.py migrate
+
+```
+
+### 5. Executar o Servidor 🌐
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+python manage.py runserver
+
+```
+
+A API estará disponível em `http://127.0.0.1:8000/`.
+
+## Testando a API 🧪
+
+Para testar os endpoints:
+
+1. Acesse `http://127.0.0.1:8000/api/menu-items/` no navegador ou via Insomnia/Postman.
+2. Para funcionalidades administrativas, crie um superusuário:
+```bash
+python manage.py createsuperuser
+
+```
+
+
+3. Faça login no painel administrativo em `http://127.0.0.1:8000/admin/`.
+
+---
